@@ -1,0 +1,20 @@
+﻿<table>
+    <tbody data-bind='foreach: items'>
+        <tr class="mui-form--inline">
+            <td class="mui-textfield mui-textfield--float-label">
+                <input type="text" data-bind='value: Email'>
+                <label>Required Email Address</label>
+                <div class="propertyError" data-bind="text: $parent.getPropertyError('Email')"></div>
+            </td>
+            <td class="mui-textfield mui-textfield--float-label">
+                <input type="text" data-bind='value: MaxChar10' />
+                <div class="propertyError" data-bind="text: $parent.getPropertyError('MaxChar10')"></div>
+                <label>Required Textarea</label>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+        <button type="submit" data-bind='click: saveChanges' class="mui-btn mui-btn--raised">
+            Save Changes
+        </button>
+

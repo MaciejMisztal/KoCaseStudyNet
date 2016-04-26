@@ -246,3 +246,10 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/KoCaseStudyNet/app/component/mui-layout/mui-init.js.map
+/KoCaseStudyNet/app/component/mui-layout/mui-layout.js.map
+/KoCaseStudyNet/app/component/page-breeze/page-breeze.js.map
+/KoCaseStudyNet/app/component/page-home/page-home.js.map
+/KoCaseStudyNet/app/component/page-kovalidation-remote/page-kovalidation-remote.js.map
+/KoCaseStudyNet/app/component/page-kovalidation-remote/rules.js.map
+/KoCaseStudyNet/app/main.js.map

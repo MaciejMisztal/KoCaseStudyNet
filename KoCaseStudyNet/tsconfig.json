@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "noImplicitAny": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "amd",
+    "isolatedModules": true,
+    "noLib": false,
+    "noEmitOnError":  false,
+    "sourceMap": true
+  },
+  "compileOnSave": true,
+  "buildOnSave": true,
+  "filesGlob": [
+    "./app/**/*.ts",
+    "./bower_modules/mko-custom/src/mko-custom.ts",
+    "./bower_modules/mko-custom/src/mko-custom.d.ts",
+    "./Sripts/typings/**/*.d.ts",
+    "./Sripts/custom_typings/**/*.d.ts",
+    "./jspm_packages/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules"//,    "bower_modules"
+  ]
+}

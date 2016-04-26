@@ -181,6 +181,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include=".bowerrc" />
+    <Content Include="bower.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="MvcReadme.txt" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -201,6 +203,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.2.3.min.map" />
+    <Content Include="tsconfig.json" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

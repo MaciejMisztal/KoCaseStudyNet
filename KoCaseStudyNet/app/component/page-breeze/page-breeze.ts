@@ -14,16 +14,16 @@ export class PageBreeze {
 
     constructor(params) {
         this.items = ko.observableArray();
-        this.eMgr = new breeze.EntityManager("/breeze/BreezeApi");
+        this.eMgr = new breeze.EntityManager("/breeze/NestedBreeze");
         this.validationErrors = ko.observableArray();
         console.log('PageBreeze.constructor');
         console.log('params=' + JSON.stringify(ko.toJSON(params)));
-        this.getAllObjects();
+        this.getAllLevels();
     };
 
-    private getAllObjects = () => {
+    private getAllLevels = () => {
         breeze.EntityQuery
-            .from("Objects")
+            .from("Levels")
             .using(this.eMgr)
             .execute()
             .then(dt => {

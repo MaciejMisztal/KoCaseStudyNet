@@ -173,6 +173,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\component\mui-layout\mui-layout.html" />
+    <Content Include="app\component\mui-nav\mui-nav.html" />
+    <Content Include="app\component\page-breeze\page-breeze.html" />
     <Content Include="app\require.config.js" />
     <Content Include="App_Data\EmptyFile.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -243,7 +246,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -252,16 +257,19 @@
     </None>
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="app\component\" />
-  </ItemGroup>
-  <ItemGroup>
+    <TypeScriptCompile Include="app\component\mui-layout\mui-init.ts" />
+    <TypeScriptCompile Include="app\component\mui-layout\mui-layout.ts" />
+    <TypeScriptCompile Include="app\component\mui-nav\mui-nav.ts" />
+    <TypeScriptCompile Include="app\component\page-breeze\page-breeze.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\knockout.punches\knockout.punches.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\knockout.validation\knockout.validation.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\knockout\knockout.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\knockout\tests\jasmine.extensions.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\page\page.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\q\Q.d.ts" />
   </ItemGroup>
   <ItemGroup>

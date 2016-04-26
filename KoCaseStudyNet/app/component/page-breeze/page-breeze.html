@@ -2,14 +2,14 @@
     <tbody data-bind='foreach: items'>
         <tr class="mui-form--inline">
             <td class="mui-textfield mui-textfield--float-label">
-                <input type="text" data-bind='value: Email'>
-                <label>Required Email Address</label>
-                <div class="propertyError" data-bind="text: $parent.getPropertyError('Email')"></div>
+                <input type="datetime-local" data-bind='value: AnyDate'>
+                <label>AnyDate</label>
+                <div class="propertyError" data-bind="text: $parent.getPropertyError('AnyDate')"></div>
             </td>
             <td class="mui-textfield mui-textfield--float-label">
-                <input type="text" data-bind='value: MaxChar10' />
-                <div class="propertyError" data-bind="text: $parent.getPropertyError('MaxChar10')"></div>
-                <label>Required Textarea</label>
+                <input type="text" data-bind='value: Description' />
+                <div class="propertyError" data-bind="text: $parent.getPropertyError('Description')"></div>
+                <label>Description</label>
             </td>
         </tr>
         </tbody>

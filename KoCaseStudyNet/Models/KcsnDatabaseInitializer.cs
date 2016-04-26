@@ -29,7 +29,7 @@ namespace KoCaseStudyNet.Models
             _baseCreatedAtDate = _baseCreatedAtDate.AddMinutes(1);
             return new LevelOne
             {
-                AnyDAte = _baseCreatedAtDate,
+                AnyDate = _baseCreatedAtDate,
                 Description = description
             };
         }

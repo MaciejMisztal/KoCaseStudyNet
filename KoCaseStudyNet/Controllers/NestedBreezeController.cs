@@ -1,6 +1,8 @@
-﻿using Breeze.ContextProvider.EF6;
+﻿using Breeze.ContextProvider;
+using Breeze.ContextProvider.EF6;
 using Breeze.WebApi2;
 using KoCaseStudyNet.Models;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +21,18 @@ namespace KoCaseStudyNet.Controllers
         public string Metadata()
         {
             return contextProvider.Metadata();
+        }
+
+        [HttpGet]
+        public IQueryable<LevelOne> Levels()
+        {
+            return contextProvider.Context.LevelOne;
+        }
+
+        [HttpPost]
+        public SaveResult SaveChanges(JObject saveBundle)
+        {
+            return contextProvider.SaveChanges(saveBundle);
         }
     }
 }

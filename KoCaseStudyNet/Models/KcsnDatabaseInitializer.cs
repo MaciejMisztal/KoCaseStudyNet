@@ -30,7 +30,11 @@ namespace KoCaseStudyNet.Models
             return new LevelOne
             {
                 AnyDate = _baseCreatedAtDate,
-                Description = description
+                Description = description,
+                LevelTwos = new List<LevelTwo> {
+                    new LevelTwo { LevelTwoDescription = description+ "child 01"},
+                    new LevelTwo { LevelTwoDescription = description+ "child 02"}
+                }
             };
         }
 

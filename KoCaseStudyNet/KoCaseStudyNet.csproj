@@ -243,6 +243,7 @@
     <Compile Include="Models\KcsnContext.cs" />
     <Compile Include="Models\KcsnDatabaseInitializer.cs" />
     <Compile Include="Models\LevelOne.cs" />
+    <Compile Include="Models\LevelTwo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -264,6 +265,9 @@
     <TypeScriptCompile Include="app\component\mui-nav\mui-nav.ts" />
     <TypeScriptCompile Include="app\component\page-breeze\page-breeze.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="Scripts\custom_typings\breeze-fix.d.ts" />
+    <TypeScriptCompile Include="Scripts\custom_typings\breeze.d.ts" />
+    <TypeScriptCompile Include="Scripts\custom_typings\mko-custom.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\knockout.punches\knockout.punches.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\knockout.validation\knockout.validation.d.ts" />

@@ -11,10 +11,25 @@
                 <div class="propertyError" data-bind="text: $parent.getPropertyError('Description')"></div>
                 <label>Description</label>
             </td>
+            <td>
+                <!--LevelTwos={{LevelTwos().length}}-->
+                <table>
+                    <tbody data-bind='foreach: LevelTwos'></tbody>
+                    <tr><td>x</td></tr>
+                    <!--<tr class="mui-form--inline">
+                        <td class="mui-textfield mui-textfield--float-label">
+                            <input type="text" />--><!--data-bind='value: LevelTwoDescription' />
+                            <div class="propertyError" data-bind="text: $parent.getPropertyError('LevelTwoDescription')"></div>
+                            <label>LevelTwoDescription</label>
+                        </td>
+                        </tr>-->
+</table>
+            </td>
         </tr>
         </tbody>
     </table>
         <button type="submit" data-bind='click: saveChanges' class="mui-btn mui-btn--raised">
             Save Changes
         </button>
+<hr />
 

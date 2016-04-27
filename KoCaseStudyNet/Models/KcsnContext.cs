@@ -14,5 +14,15 @@ namespace KoCaseStudyNet.Models
             Database.SetInitializer(new KcsnDatabaseInitializer());
         }
         public DbSet<LevelOne> LevelOne { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+
+        {
+
+            modelBuilder.Entity<LevelTwo>().HasRequired(e => e.LevelOne)
+
+                .WithMany(e => e.LevelTwos);
+
+        }
     }
 }

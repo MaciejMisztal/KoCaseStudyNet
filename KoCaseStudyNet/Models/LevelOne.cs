@@ -14,5 +14,7 @@ namespace KoCaseStudyNet.Models
         public string Description { get; set; }
         [Required(ErrorMessage = "Date and time required")]
         public DateTime AnyDate { get; set; }  
+
+        public virtual  ICollection<LevelTwo> LevelTwos { get; set; }
     }
 }

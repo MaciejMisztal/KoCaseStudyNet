@@ -23,11 +23,13 @@ export class PageBreeze {
 
     private getAllLevels = () => {
         breeze.EntityQuery
-            .from("Levels")
+            .from("Levels")//.expand("LevelTwos")
             .using(this.eMgr)
             .execute()
             .then(dt => {
-                this.items(dt.results);
+                dt.results.forEach((item) => this.items.push(item));
+                //this.items(dt.results);
+                console.log('loaded');//ko.toJSON(this.items));
             }).catch(err => { "Problem:" + alert(err.message); });
     }
     private saveChanges = () => {

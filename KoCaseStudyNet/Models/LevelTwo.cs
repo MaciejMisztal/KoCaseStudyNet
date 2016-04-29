@@ -13,6 +13,6 @@ namespace KoCaseStudyNet.Models
         [Required, StringLength(maximumLength: 30)]
         public string LevelTwoDescription { get; set; }
         public int LevelOneId   { get; set; }
-         public virtual LevelOne LevelOne { get; set; }
+       //  public virtual LevelOne LevelOne { get; set; }
     }
 }

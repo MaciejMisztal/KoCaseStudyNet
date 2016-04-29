@@ -1,35 +1,34 @@
-﻿<table>
-    <tbody data-bind='foreach: items'>
-        <tr class="mui-form--inline">
-            <td class="mui-textfield mui-textfield--float-label">
-                <input type="datetime-local" data-bind='value: AnyDate'>
-                <label>AnyDate</label>
-                <div class="propertyError" data-bind="text: $parent.getPropertyError('AnyDate')"></div>
-            </td>
-            <td class="mui-textfield mui-textfield--float-label">
-                <input type="text" data-bind='value: Description' />
-                <div class="propertyError" data-bind="text: $parent.getPropertyError('Description')"></div>
-                <label>Description</label>
-            </td>
-            <td>
-                <!--LevelTwos={{LevelTwos().length}}-->
-                <table>
-                    <tbody data-bind='foreach: LevelTwos'></tbody>
-                    <tr><td>x</td></tr>
-                    <!--<tr class="mui-form--inline">
-                        <td class="mui-textfield mui-textfield--float-label">
-                            <input type="text" />--><!--data-bind='value: LevelTwoDescription' />
-                            <div class="propertyError" data-bind="text: $parent.getPropertyError('LevelTwoDescription')"></div>
+﻿<div data-bind="if: isLoaded">
+   
+    <div class="mui-row" data-bind='foreach: items'>
+   
+            <div class="mui-form--inline mui-col-md-5">
+                <div class="mui-textfield mui-textfield--float-label">
+                    <input type="datetime-local" data-bind='value: AnyDate'>
+                    <label>AnyDate</label>
+                    <div class="propertyError" data-bind="text: $parent.getPropertyError('AnyDate')"></div>
+                </div>
+                <div class="mui-textfield mui-textfield--float-label">
+                    <input type="text" data-bind='value: Description' />
+                    <div class="propertyError" data-bind="text: $parent.getPropertyError('Description')"></div>
+                    <label>Description</label>
+                </div>
+                </div>
+                <div class="mui-form--inline mui-col-md-5">
+                    <div data-bind="foreach: LevelTwos">
+                        <div class="mui-textfield mui-textfield--float-label">
+                            <input type="text" data-bind='textInput: LevelTwoDescription'>
                             <label>LevelTwoDescription</label>
-                        </td>
-                        </tr>-->
-</table>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-        <button type="submit" data-bind='click: saveChanges' class="mui-btn mui-btn--raised">
-            Save Changes
-        </button>
-<hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <button type="submit" data-bind='click: saveChanges' class="mui-btn mui-btn--raised">
+        Save Changes
+    </button>
+<div data-bind="ifnot: isLoaded">
+    Preparing
+</div>
+    <hr />
 

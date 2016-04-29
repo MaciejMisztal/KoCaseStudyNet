@@ -175,6 +175,7 @@
   <ItemGroup>
     <Content Include="app\component\mui-layout\mui-layout.html" />
     <Content Include="app\component\mui-nav\mui-nav.html" />
+    <Content Include="app\component\page-breeze\page-breeze-table.html" />
     <Content Include="app\component\page-breeze\page-breeze.html" />
     <Content Include="app\require.config.js" />
     <Content Include="App_Data\EmptyFile.txt">
@@ -269,6 +270,7 @@
     <TypeScriptCompile Include="Scripts\custom_typings\breeze.d.ts" />
     <TypeScriptCompile Include="Scripts\custom_typings\mko-custom.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout.mapping\knockout.mapping.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\knockout.punches\knockout.punches.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\knockout.validation\knockout.validation.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\knockout\knockout.d.ts" />

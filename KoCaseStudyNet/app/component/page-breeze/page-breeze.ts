@@ -1,4 +1,5 @@
 import * as ko from "knockout";
+import  "knockout.mapping";
 import {mkoCustomTemplateLoader} from "mko-custom";
 import * as breeze from "breeze";
 
@@ -9,12 +10,19 @@ let templateUrl = "text!/app/component/page-breeze/page-breeze.html";
 export class PageBreeze {
     public eMgr;
     public items;
-    public store;
+    public store: breeze.MetadataStore;
+    public isLoaded;
     public validationErrors: KnockoutObservableArray<any>;
 
     constructor(params) {
+        //(<any>window).ko = ko;
+        //breeze.config.initializeAdapterInstance('modelLibrary', 'ko', true);
+
+        this.isLoaded = ko.observable(false);
         this.items = ko.observableArray();
         this.eMgr = new breeze.EntityManager("/breeze/NestedBreeze");
+        //this.store = new breeze.MetadataStore();
+        
         this.validationErrors = ko.observableArray();
         console.log('PageBreeze.constructor');
         console.log('params=' + JSON.stringify(ko.toJSON(params)));
@@ -23,13 +31,18 @@ export class PageBreeze {
 
     private getAllLevels = () => {
         breeze.EntityQuery
-            .from("Levels")//.expand("LevelTwos")
+            .from("Levels").expand("LevelTwos")
             .using(this.eMgr)
             .execute()
             .then(dt => {
-                dt.results.forEach((item) => this.items.push(item));
-                //this.items(dt.results);
-                console.log('loaded');//ko.toJSON(this.items));
+                //this.store.fetchMetadata("/breeze/NestedBreeze");
+                //this.store.getEntityType("LevelTwos");
+                this.items(dt.results);
+                //ko.mapping.fromJS(dt.results, {}, this.items);
+                console.log("done");//;ko.toJSON(this.items));
+                //console.log(this.eMgr.getEntities())
+                this.isLoaded(true);
+                console.log("here: " + dt.results.length)
             }).catch(err => { "Problem:" + alert(err.message); });
     }
     private saveChanges = () => {

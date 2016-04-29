@@ -8,6 +8,7 @@
     "require-css": "0.1.8",
     "breeze-client": "1.5.6",
     "mui": "0.5.4",
-    "mko-custom": "git://github.com/MaciejMisztal/mko-custom.git#0.1.1"
+    "mko-custom": "git://github.com/MaciejMisztal/mko-custom.git#0.1.1",
+    "bower-knockout-mapping": "2.6.0"
   }
 }

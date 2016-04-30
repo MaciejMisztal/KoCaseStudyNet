@@ -26,7 +26,7 @@ namespace KoCaseStudyNet.Controllers
         [HttpGet]
         public IQueryable<LevelOne> Levels()
         {
-            return contextProvider.Context.LevelOne.Include("LevelTwos");
+            return contextProvider.Context.LevelOne;//.Include("LevelTwos");
         }
 
         [HttpPost]

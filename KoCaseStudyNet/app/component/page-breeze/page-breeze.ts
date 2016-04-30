@@ -22,12 +22,20 @@ export class PageBreeze {
         this.items = ko.observableArray();
         this.eMgr = new breeze.EntityManager("/breeze/NestedBreeze");
         //this.store = new breeze.MetadataStore();
-        
+
         this.validationErrors = ko.observableArray();
         console.log('PageBreeze.constructor');
         console.log('params=' + JSON.stringify(ko.toJSON(params)));
         this.getAllLevels();
     };
+
+    click = (data, parent) => {
+        console.log(parent);
+    };
+    del = (data) => {
+        console.log(data);
+        data.entityAspect.setDeleted();  
+    }
 
     private getAllLevels = () => {
         breeze.EntityQuery

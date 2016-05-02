@@ -15,14 +15,15 @@ namespace KoCaseStudyNet.Models
             Database.SetInitializer(new KcsnDatabaseInitializer());
         }
         public DbSet<LevelOne> LevelOne { get; set; }
+        public DbSet<LevelTwo> LevelTwo { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
 
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-            modelBuilder.Entity<LevelOne>().HasMany(x => x.LevelTwos);
-           // modelBuilder.Entity<LevelTwo>().HasRequired(e => e.LevelOneId).;
+            //try modelBuilder.Entity<LevelOne>().HasMany(x => x.LevelTwos);
+
 
         }
     }

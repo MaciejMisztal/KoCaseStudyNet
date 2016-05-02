@@ -1,5 +1,6 @@
 import * as ko from "knockout";
-import  "knockout.mapping";
+import "knockout.mapping";
+import "knockout-projections";
 import {mkoCustomTemplateLoader} from "mko-custom";
 import * as breeze from "breeze";
 
@@ -10,18 +11,19 @@ let templateUrl = "text!/app/component/page-breeze/page-breeze.html";
 export class PageBreeze {
     public eMgr;
     public items;
-    public store: breeze.MetadataStore;
+    public itemsNotDeleted;
+    //public store: breeze.MetadataStore;
     public isLoaded;
     public validationErrors: KnockoutObservableArray<any>;
 
     constructor(params) {
         //(<any>window).ko = ko;
         //breeze.config.initializeAdapterInstance('modelLibrary', 'ko', true);
+        ko.options.deferUpdates = false;
 
         this.isLoaded = ko.observable(false);
-        this.items = ko.observableArray();
+        this.items = ko.observableArray([]);              
         this.eMgr = new breeze.EntityManager("/breeze/NestedBreeze");
-        //this.store = new breeze.MetadataStore();
 
         this.validationErrors = ko.observableArray();
         console.log('PageBreeze.constructor');
@@ -31,11 +33,28 @@ export class PageBreeze {
 
     click = (data, parent) => {
         console.log(parent);
+        console.log(data);
+        data.remove(parent);
     };
     del = (data) => {
         console.log(data);
-        data.entityAspect.setDeleted();  
+        data['isDeleted'] = ko.observable(true);
+        data.entityAspect.setDeleted();
+        this.items.valueHasMutated();
+        console.log('deleted');
     }
+
+    isNotDeleted = (item) => {
+        return item.entityAspect.entityState !== "Deleted"
+    };
+
+    isNotDeleted2 = (data, parent) => {
+        return data.entityAspect.entityState !== breeze.EntityState.Deleted;
+    };
+
+    isNotDeletedF = (data) => {
+        return data.entityAspect.entityState !== breeze.EntityState.Deleted;
+    };
 
     private getAllLevels = () => {
         breeze.EntityQuery
@@ -43,12 +62,8 @@ export class PageBreeze {
             .using(this.eMgr)
             .execute()
             .then(dt => {
-                //this.store.fetchMetadata("/breeze/NestedBreeze");
-                //this.store.getEntityType("LevelTwos");
                 this.items(dt.results);
-                //ko.mapping.fromJS(dt.results, {}, this.items);
-                console.log("done");//;ko.toJSON(this.items));
-                //console.log(this.eMgr.getEntities())
+                console.log("done");
                 this.isLoaded(true);
                 console.log("here: " + dt.results.length)
             }).catch(err => { "Problem:" + alert(err.message); });

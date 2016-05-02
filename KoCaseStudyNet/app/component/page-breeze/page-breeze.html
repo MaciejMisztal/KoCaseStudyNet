@@ -20,8 +20,9 @@
                     <input type="text" data-bind='textInput: LevelTwoDescription'>
                     <label>LevelTwoDescription</label>
                 </div>
-                                  <!--<BUTTON data-bind="click: $component.click.bind($data,$parent)">Usuń</BUTTON>--> 
                 <button data-bind="click: $component.del">Delete</button> 
+                <button data-bind="click: $component.click.bind($data,$parent)">Click</button> 
+                <span data-bind="ifnot: $component.isNotDeleted2($data)">X</span>
             </div>
         </div>
     </div>

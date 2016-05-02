@@ -1,9 +1,10 @@
-﻿/// <reference path="../bower_modules/bower-knockout-mapping/dist/knockout.mapping.min.js" />
+﻿/// <reference path="../bower_modules/knockout-projections/dist/knockout-projections.min.js" />
+/// <reference path="../bower_modules/bower-knockout-mapping/dist/knockout.mapping.min.js" />
 var require = {
     baseUrl: "../",
     paths: {
         "text": "bower_modules/requirejs-text/text",
-        "knockout": "Scripts/knockout-3.4.0",
+        "knockout": "Scripts/knockout-3.4.0.debug",
         "breeze": "bower_modules/breeze-client/build/breeze.debug",
         "Q": "Scripts/q.min",
         "jquery": "Scripts/jquery-2.2.3.min",
@@ -13,7 +14,8 @@ var require = {
         "knockout.punches": "Scripts/knockout.punches",
         "page": "bower_modules/page/page",
         "knockout.validation": "Scripts/knockout.validation",
-        "knockout.mapping": "bower_modules/bower-knockout-mapping/dist/knockout.mapping.min"
+        "knockout.mapping": "bower_modules/bower-knockout-mapping/dist/knockout.mapping.min",
+        "knockout-projections": "bower_modules/knockout-projections/dist/knockout-projections.min"
     },
     map: {
         '*': {
@@ -21,10 +23,7 @@ var require = {
         }
     },
     shim: {
-        //"knockout": {
-        //    exports: 'ko'
-        //},
-        "breeze": ["Q", "jquery"],//"knockout"],
+        "breeze": ["Q", "jquery"],
         "mui": ["jquery"]
     }
 };

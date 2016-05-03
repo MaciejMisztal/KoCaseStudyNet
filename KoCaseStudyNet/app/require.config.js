@@ -1,5 +1,5 @@
-﻿/// <reference path="../bower_modules/knockout-projections/dist/knockout-projections.min.js" />
-/// <reference path="../bower_modules/bower-knockout-mapping/dist/knockout.mapping.min.js" />
+﻿/// <reference path="../bower_modules/ko-calendar/dist/ko-calendar.min.js" />
+
 var require = {
     baseUrl: "../",
     paths: {
@@ -15,7 +15,8 @@ var require = {
         "page": "bower_modules/page/page",
         "knockout.validation": "Scripts/knockout.validation",
         "knockout.mapping": "bower_modules/bower-knockout-mapping/dist/knockout.mapping.min",
-        "knockout-projections": "bower_modules/knockout-projections/dist/knockout-projections.min"
+        "knockout-projections": "bower_modules/knockout-projections/dist/knockout-projections.min",
+        "ko-calendar": "bower_modules/ko-calendar/dist/ko-calendar.min"
     },
     map: {
         '*': {

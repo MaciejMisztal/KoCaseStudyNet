@@ -1,5 +1,7 @@
 import * as ko from "knockout";
 import "knockout.mapping";
+import "ko-calendar";
+import "css!ko-calendar";
 import "knockout-projections";
 import {mkoCustomTemplateLoader} from "mko-custom";
 import * as breeze from "breeze";

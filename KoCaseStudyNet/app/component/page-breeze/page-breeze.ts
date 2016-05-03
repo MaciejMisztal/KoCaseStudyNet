@@ -4,22 +4,21 @@ import "knockout-projections";
 import {mkoCustomTemplateLoader} from "mko-custom";
 import * as breeze from "breeze";
 
-let templateUrl = "text!/app/component/page-breeze/page-breeze.html";
 
 
-@mkoCustomTemplateLoader('page-breeze', templateUrl)
+@mkoCustomTemplateLoader('page-breeze', "text!/app/component/page-breeze/page-breeze.html")
 export class PageBreeze {
     public eMgr;
     public items;
     public itemsNotDeleted;
-    //public store: breeze.MetadataStore;
+
     public isLoaded;
     public validationErrors: KnockoutObservableArray<any>;
 
     constructor(params) {
         //(<any>window).ko = ko;
         //breeze.config.initializeAdapterInstance('modelLibrary', 'ko', true);
-        ko.options.deferUpdates = false;
+        //ko.options.deferUpdates = false;
 
         this.isLoaded = ko.observable(false);
         this.items = ko.observableArray([]);              
@@ -32,15 +31,16 @@ export class PageBreeze {
     };
 
     click = (data, parent) => {
-        console.log(parent);
-        console.log(data);
-        data.remove(parent);
+        console.log('parent='+parent);
+        console.log('data='+data);
+        //data.remove(parent);
     };
     del = (data) => {
         console.log(data);
         data['isDeleted'] = ko.observable(true);
         data.entityAspect.setDeleted();
         this.items.valueHasMutated();
+        //ko.tasks.runEarly();
         console.log('deleted');
     }
 

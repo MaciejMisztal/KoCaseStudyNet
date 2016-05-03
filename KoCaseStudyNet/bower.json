@@ -1,6 +1,6 @@
 {
-	"name": "ASP.NET",
-	"private": true,
+  "name": "ASP.NET",
+  "private": true,
   "dependencies": {
     "page": "git://github.com/visionmedia/page.js#1.7.1",
     "requirejs": "2.2.0",
@@ -12,6 +12,9 @@
     "bower-knockout-mapping": "2.6.0",
     "knockout-projections": "1.1.0",
     "ko-calendar": "0.2.12",
+    "knockout": "3.4.0"
+  },
+  "resolutions": {
     "knockout": "3.4.0"
   }
 }

@@ -11,6 +11,7 @@
     "mko-custom": "git://github.com/MaciejMisztal/mko-custom.git#0.1.1",
     "bower-knockout-mapping": "2.6.0",
     "knockout-projections": "1.1.0",
-    "ko-calendar": "0.2.12"
+    "ko-calendar": "0.2.12",
+    "knockout": "3.4.0"
   }
 }

@@ -178,6 +178,7 @@
     <Content Include="app\component\page-breeze\page-breeze-table.html" />
     <Content Include="app\component\page-breeze\page-breeze.html" />
     <Content Include="app\require.config.js" />
+    <Content Include="App_Data\EmptyFile.txt" />
     <Content Include="App_Data\FakeTextFile.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

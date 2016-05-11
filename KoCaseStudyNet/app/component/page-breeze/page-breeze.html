@@ -4,7 +4,6 @@
 
         <div class="mui-form--inline mui-col-md-5">
             <div class="mui-textfield mui-textfield--float-label">
-                <!--<input type="datetime-local" data-bind='value: AnyDate'>-->
                 <input type="text" data-bind="value: AnyDate, calendar: { value: ko.observable(AnyDate) } ">
                 <label>AnyDate</label>
                 <div class="propertyError" data-bind="text: $parent.getPropertyError('AnyDate')"></div>
@@ -15,7 +14,14 @@
                 <label>Description</label>
             </div>
         </div>
+
         <div class="mui-form--inline mui-col-md-5">
+                <div data-bind="foreach: LevelTwos">
+                    <editor-breeze params="element: $data"></editor-breeze>
+            </div>
+       
+
+        <!--<div class="mui-form--inline mui-col-md-5">
             <div data-bind="foreach: LevelTwos">
                 <div class="mui-textfield mui-textfield--float-label">
                     <input type="text" data-bind='textInput: LevelTwoDescription'>
@@ -25,7 +31,8 @@
                 <button data-bind="click: $component.click.bind($data,$parent)">Click</button> 
                 <span data-bind="ifnot: $component.isNotDeleted2($data)">X</span>
             </div>
-        </div>
+        </div>-->
+
     </div>
 </div>
 <button type="submit" data-bind='click: saveChanges' class="mui-btn mui-btn--raised">
@@ -35,4 +42,3 @@
     Preparing
 </div>
 <hr />
-

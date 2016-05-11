@@ -1,0 +1,10 @@
+<!--<div class="mui-form--inline">-->
+<div class="mui-form--inline mui-col-md-5">
+    <div class="mui-textfield mui-textfield--float-label">
+        <input type="text" data-bind='textInput: item.LevelTwoDescription'>
+        <label>LevelTwoDescription</label>
+    </div>
+    <!--<button data-bind="click: $component.del">Delete</button>-->
+    <button data-bind="click:del">Delete</button>
+    <span data-bind="if:isDeleted">X</span>
+</div>

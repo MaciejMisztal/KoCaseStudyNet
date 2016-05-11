@@ -3,6 +3,7 @@ import "knockout.mapping";
 import "ko-calendar";
 import "css!ko-calendar";
 import "knockout-projections";
+import "../editor-breeze/editor-breeze";
 import {mkoCustomTemplateLoader} from "mko-custom";
 import * as breeze from "breeze";
 
@@ -20,7 +21,7 @@ export class PageBreeze {
     constructor(params) {
         //(<any>window).ko = ko;
         //breeze.config.initializeAdapterInstance('modelLibrary', 'ko', true);
-        //ko.options.deferUpdates = false;
+        ko.options.deferUpdates = false;
 
         this.isLoaded = ko.observable(false);
         this.items = ko.observableArray([]);              

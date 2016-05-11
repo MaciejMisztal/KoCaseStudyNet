@@ -174,9 +174,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\component\mui-layout\mui-layout.html" />
+    <Content Include="app\component\editor-breeze\editor-breeze.html" />
     <Content Include="app\component\mui-nav\mui-nav.html" />
     <Content Include="app\component\page-breeze\page-breeze-table.html" />
     <Content Include="app\component\page-breeze\page-breeze.html" />
+    <Content Include="app\component\page-home\page-home.html" />
+    <Content Include="app\component\page-kovalidation-remote\page-kovalidation-remote.html" />
     <Content Include="app\require.config.js" />
     <Content Include="App_Data\FakeTextFile.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -279,8 +282,13 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\component\mui-layout\mui-init.ts" />
     <TypeScriptCompile Include="app\component\mui-layout\mui-layout.ts" />
+    <TypeScriptCompile Include="app\component\editor-breeze\editor-breeze.ts" />
     <TypeScriptCompile Include="app\component\mui-nav\mui-nav.ts" />
     <TypeScriptCompile Include="app\component\page-breeze\page-breeze.ts" />
+    <TypeScriptCompile Include="app\component\editor-breeze\editor-breeze-model.ts" />
+    <TypeScriptCompile Include="app\component\page-home\page-home.ts" />
+    <TypeScriptCompile Include="app\component\page-kovalidation-remote\page-kovalidation-remote.ts" />
+    <TypeScriptCompile Include="app\component\page-kovalidation-remote\rules.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="Scripts\custom_typings\breeze-fix.d.ts" />
     <TypeScriptCompile Include="Scripts\custom_typings\breeze.d.ts" />

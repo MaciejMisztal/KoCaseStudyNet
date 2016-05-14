@@ -2,7 +2,7 @@
 
 Sample usage:
 
-- knonckout custom element
+- knockout custom element (via decorator)
 - require.js
 - breeze.js 
 - page.js

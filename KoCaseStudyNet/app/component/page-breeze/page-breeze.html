@@ -16,28 +16,29 @@
         </div>
 
         <div class="mui-form--inline mui-col-md-5">
-                <div data-bind="foreach: LevelTwos">
-                    <editor-breeze params="element: $data"></editor-breeze>
-            </div>
-       
-
-        <!--<div class="mui-form--inline mui-col-md-5">
             <div data-bind="foreach: LevelTwos">
-                <div class="mui-textfield mui-textfield--float-label">
-                    <input type="text" data-bind='textInput: LevelTwoDescription'>
-                    <label>LevelTwoDescription</label>
-                </div>
-                <button data-bind="click: $component.del">Delete</button> 
-                <button data-bind="click: $component.click.bind($data,$parent)">Click</button> 
-                <span data-bind="ifnot: $component.isNotDeleted2($data)">X</span>
+                <editor-breeze params="element: $data"></editor-breeze>
             </div>
-        </div>-->
 
+
+            <!--<div class="mui-form--inline mui-col-md-5">
+                <div data-bind="foreach: LevelTwos">
+                    <div class="mui-textfield mui-textfield--float-label">
+                        <input type="text" data-bind='textInput: LevelTwoDescription'>
+                        <label>LevelTwoDescription</label>
+                    </div>
+                    <button data-bind="click: $component.del">Delete</button>
+                    <button data-bind="click: $component.click.bind($data,$parent)">Click</button>
+                    <span data-bind="ifnot: $component.isNotDeleted2($data)">X</span>
+                </div>
+            </div>-->
+
+        </div>
     </div>
+    <button type="submit" data-bind='click: saveChanges' class="mui-btn mui-btn--raised">
+        Save Changes
+    </button>
 </div>
-<button type="submit" data-bind='click: saveChanges' class="mui-btn mui-btn--raised">
-    Save Changes
-</button>
 <div data-bind="ifnot: isLoaded">
     Preparing
 </div>

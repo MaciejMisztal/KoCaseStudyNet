@@ -1,38 +1,28 @@
 ﻿<div data-bind="if: isLoaded">
 
-    <div class="mui-row" data-bind='foreach: items'>
-
-        <div class="mui-form--inline mui-col-md-5">
-            <div class="mui-textfield mui-textfield--float-label">
-                <input type="text" data-bind="value: AnyDate, calendar: { value: ko.observable(AnyDate) } ">
-                <label>AnyDate</label>
-                <div class="propertyError" data-bind="text: $parent.getPropertyError('AnyDate')"></div>
-            </div>
-            <div class="mui-textfield mui-textfield--float-label">
-                <input type="text" data-bind='value: Description' />
-                <div class="propertyError" data-bind="text: $parent.getPropertyError('Description')"></div>
-                <label>Description</label>
-            </div>
-        </div>
-
-        <div class="mui-form--inline mui-col-md-5">
-            <div data-bind="foreach: LevelTwos">
-                <editor-breeze params="element: $data"></editor-breeze>
-            </div>
-
-
-            <!--<div class="mui-form--inline mui-col-md-5">
-                <div data-bind="foreach: LevelTwos">
-                    <div class="mui-textfield mui-textfield--float-label">
-                        <input type="text" data-bind='textInput: LevelTwoDescription'>
-                        <label>LevelTwoDescription</label>
-                    </div>
-                    <button data-bind="click: $component.del">Delete</button>
-                    <button data-bind="click: $component.click.bind($data,$parent)">Click</button>
-                    <span data-bind="ifnot: $component.isNotDeleted2($data)">X</span>
+    <div data-bind='foreach: items'>
+        <div class="mui-row">
+            <div class="mui-form--inline mui-col-md-5">
+                <div class="mui-textfield mui-textfield">
+                    <input type="text" data-bind="value: AnyDate, calendar: { value: ko.observable(AnyDate) } ">
+                    <label>AnyDate</label>
+                    <!--<div class="propertyError" data-bind="text: $component.getObjectPropertyError($data,'AnyDate')"></div>-->
+                    <div class="propertyError" data-bind="text: $component.getPropertyError($data,'AnyDate')"></div>
                 </div>
-            </div>-->
 
+                <div class="mui-textfield mui-textfield">
+                    <input type="text" data-bind='value: Description' />
+                    <!--<div class="propertyError" data-bind="text: $component.getObjectPropertyError($data,'Description')"></div>-->
+                    <div class="propertyError" data-bind="text: $component.getPropertyError($data,'Description')"></div>
+                    <label>Description</label>
+                </div>
+            </div>
+
+            <div class="mui-form--inline mui-col-md-5">
+                <div data-bind="foreach: LevelTwos">
+                    <editor-breeze params="element: $data"></editor-breeze>
+                </div>
+            </div>
         </div>
     </div>
     <button type="submit" data-bind='click: saveChanges' class="mui-btn mui-btn--raised">
@@ -43,3 +33,4 @@
     Preparing
 </div>
 <hr />
+

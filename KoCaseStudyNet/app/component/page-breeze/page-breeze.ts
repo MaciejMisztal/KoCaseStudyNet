@@ -1,16 +1,18 @@
+/// <reference path="../../base/breeze-validated.ts" />
 import * as ko from "knockout";
 import "knockout.mapping";
 import "ko-calendar";
 import "css!ko-calendar";
 import "knockout-projections";
 import "../editor-breeze/editor-breeze";
+import {BreezeValidated} from "../../base/breeze-validated";
 import {mkoCustomTemplateLoader} from "mko-custom";
 import * as breeze from "breeze";
 
 
 
 @mkoCustomTemplateLoader('page-breeze', "text!/app/component/page-breeze/page-breeze.html")
-export class PageBreeze {
+export class PageBreeze extends BreezeValidated {
     public eMgr;
     public items;
     public itemsNotDeleted;
@@ -19,6 +21,7 @@ export class PageBreeze {
     public validationErrors: KnockoutObservableArray<any>;
 
     constructor(params) {
+        super();
         //(<any>window).ko = ko;
         //breeze.config.initializeAdapterInstance('modelLibrary', 'ko', true);
         ko.options.deferUpdates = false;
@@ -77,6 +80,8 @@ export class PageBreeze {
         this.eMgr.saveChanges()
             .then(sr => { alert("Saved " + sr.entities.length + " item(s)") })
             .catch(this.saveFailed);
+        this.items.valueHasMutated();
+
     };
 
     private saveFailed = (error) => {
@@ -84,9 +89,9 @@ export class PageBreeze {
         error.entityErrors.map(
             (entityError) => this.validationErrors.push(entityError)
         );
-    }
+    };
 
-    private getPropertyError = (propertyName) => {
+    public getError = (propertyName) => {
         console.log('propertyName=' + propertyName);
         let validationErrors = ko.utils.arrayFilter(this.validationErrors(), (validationError) => {
             return validationError.propertyName == propertyName;
@@ -95,5 +100,16 @@ export class PageBreeze {
             return validationErrors[0].errorMessage;
         else
             return '';
-	};
+    };
+
+    public getPropertyError = (data: breeze.Entity, propertyName: string) => {
+        console.log('propertyName=' + propertyName);
+        let validationErrors = ko.utils.arrayFilter(data.entityAspect.getValidationErrors(), (validationError) => {
+            return validationError.propertyName == propertyName;
+        });
+        if (validationErrors.length)
+            return validationErrors[0].errorMessage;
+        else
+            return '';
+    };
 };

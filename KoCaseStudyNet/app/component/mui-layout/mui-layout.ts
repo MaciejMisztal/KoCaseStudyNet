@@ -5,7 +5,6 @@ import {mkoCustomTemplateLoader} from "mko-custom";
 import "css!./mui-layout.css";
 import "../mui-nav/mui-nav";
 import "../page-home/page-home";
-import "../page-kovalidation-remote/page-kovalidation-remote";
 import "../page-breeze/page-breeze";
 import {muiInit} from "./mui-init";
 

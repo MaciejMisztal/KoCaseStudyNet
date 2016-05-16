@@ -1,6 +1,4 @@
-﻿/// <reference path="../bower_modules/ko-calendar/dist/ko-calendar.min.js" />
-
-var require = {
+﻿var require = {
     baseUrl: "../",
     paths: {
         "text": "bower_modules/requirejs-text/text",

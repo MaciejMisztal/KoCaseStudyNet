@@ -1,10 +1,11 @@
 <div class="mui-form--inline mui-col-md-5">
     <div class="mui-textfield mui-textfield">
         <input type="text" data-bind='textInput: item.LevelTwoDescription'>
-        <!--<div class="propertyError" data-bind="text: $component.getObjectPropertyError($data.item,'LevelTwoDescription')"></div>-->
+        <div class="propertyError" data-bind="text: $component.getObjectPropertyError($data.item,'LevelTwoDescription')"></div>
         <div class="propertyError" data-bind="text: $component.getPropertyErr2($data.item,'LevelTwoDescription')"></div>
         <label>LevelTwoDescription</label>
     </div>
     <button data-bind="click:del">Delete</button>
     <span data-bind="if:isDeleted">X</span>
+    <span data-bind="if:hasError">E</span>
 </div>

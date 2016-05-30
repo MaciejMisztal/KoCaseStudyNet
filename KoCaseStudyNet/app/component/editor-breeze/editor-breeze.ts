@@ -1,20 +1,28 @@
 import * as ko from "knockout";
-import EditorBreezeModel from "./editor-breeze-model";
 import {mkoCustomTemplateLoader} from "mko-custom";
-let templateUrl = "text!/app/component/editor-breeze/editor-breeze.html";
 import * as breeze from "breeze";
 import {BreezeValidated} from "../../base/breeze-validated";
 
 
-@mkoCustomTemplateLoader('editor-breeze', templateUrl)
+@mkoCustomTemplateLoader(
+    'editor-breeze',
+    "text!/app/component/editor-breeze/editor-breeze.html")
 export class EditorBreeze extends BreezeValidated {
     item;
     isDeleted;
+    hasError;
     constructor(params) {
         super();
         this.item = params.element;
         this.isDeleted = ko.observable(false);
+        this.hasError = ko.observable(false);
+        this.item.entityAspect.validationErrorsChanged.subscribe(this.handleValidationErrorChanged);
         console.log('editor-breeze');
+    };
+
+    handleValidationErrorChanged = () => {
+        this.hasError(this.item.entityAspect.hasValidationErrors);
+        this.item.valueHasMutated();
     };
 
     del = (data) => {

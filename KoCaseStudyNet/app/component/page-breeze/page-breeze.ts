@@ -22,8 +22,8 @@ export class PageBreeze extends BreezeValidated {
 
     constructor(params) {
         super();
-        //(<any>window).ko = ko;
-        //breeze.config.initializeAdapterInstance('modelLibrary', 'ko', true);
+        (<any>window)["ko"] = ko;
+        breeze.config.initializeAdapterInstance('modelLibrary', 'ko', true);
         ko.options.deferUpdates = false;
 
         this.isLoaded = ko.observable(false);
@@ -89,6 +89,10 @@ export class PageBreeze extends BreezeValidated {
         error.entityErrors.map(
             (entityError) => this.validationErrors.push(entityError)
         );
+        setTimeout(() => {
+            this.items.valueHasMutated();
+            ko.tasks.runEarly();
+        }, 0)
     };
 
     public getError = (propertyName) => {

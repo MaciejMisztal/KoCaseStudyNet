@@ -2,6 +2,9 @@
 import * as breeze from "breeze";
 
 export class BreezeValidated {
+    constructor() {
+        console.log("BreezeValidated");
+    };
     getObjectPropertyError = (data: breeze.Entity, propertyName: string) => {
         console.log('propertyName=' + propertyName);
         let validationErrors = ko.utils.arrayFilter(data.entityAspect.getValidationErrors(), (validationError) => {

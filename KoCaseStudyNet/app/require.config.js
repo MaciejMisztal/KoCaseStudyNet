@@ -22,7 +22,7 @@
         }
     },
     shim: {
-        "breeze": ["Q", "jquery"],
+        "breeze": ["knockout","Q", "jquery"],
         "mui": ["jquery"]
     }
 };
